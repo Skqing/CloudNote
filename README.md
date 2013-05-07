@@ -11,4 +11,4 @@ CloudNote
 
 
 ###参考资料
-mongodb: http://www.cnblogs.com/ygm125/archive/2011/09/02/2163532.html
+mongodb:

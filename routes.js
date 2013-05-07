@@ -9,19 +9,21 @@
 var crypto = require('crypto');
 var User = require('./models/user.js');
 var Note = require('./models/note.js');
+var site = require('./controllers/site');
 
 module.exports = function(app) {
-  app.get('/', function(req, res) {
-    Note.get(null, function(err, posts) {
-      if (err) {
-        posts = [];
-      }
-      res.render('index', {
-        title: '首頁',
-        posts: posts
-      });
-    });
-  });
+  app.get('/', site.index);
+//  app.get('/', function(req, res) {
+//    Note.get(null, function(err, posts) {
+//      if (err) {
+//        posts = [];
+//      }
+//      res.render('index', {
+//        title: '首頁',
+//        posts: posts
+//      });
+//    });
+//  });
 
   app.get('/reg', checkNotLogin);
   app.get('/reg', function(req, res) {
